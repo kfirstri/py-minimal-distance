@@ -5,7 +5,7 @@
 """
 import re
 
-def get_separated_strings(text, separators):
+def get_sentences(text):
     """ Return list of sentences from a text """
     sentences = []
     parsed_text = re.split("(\.|!!!)", text.strip())
@@ -65,7 +65,7 @@ def main():
     phrase2 = input('Phrase2: ')
     neg = input('Negation word: ')
 
-    sentences = get_separated_strings(text, SENTENCE_SEPARATORS)
+    sentences = get_sentences(text)
     distances = get_distances(sentences, phrase1, phrase2, neg)
 
     minimal_distance = min(distances)
